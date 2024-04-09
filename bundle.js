@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\nwindow.UIBuilder = {\n    addComponent: (builderState) => {\n        const model = Neara.getModel();\n        const panelName = builderState.getPanelName();\n        console.log(\"panelName\", panelName);\n    },\n};\nNeara.setPermittedPluginFunctions([\n    'UIBuilder.addComponent',\n]);\n\n\n\n//# sourceURL=webpack://plugin/./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\nwindow.UIBuilder = {\n    addComponent: (builderState) => {\n        const model = Neara.getModel();\n        let builderCode = \"\";\n        // Read the state\n        const panelName = builderState.getPanelName();\n        // Generate the code\n        builderCode += `ui_panel(\"${panelName}\",ui_mixed(list(`;\n        builderCode += `)))`;\n        // Update the shared state\n        builderState.setBuilderCode(builderCode);\n        console.log(\"builderCode\", builderCode);\n    },\n};\nNeara.setPermittedPluginFunctions([\n    'UIBuilder.addComponent',\n]);\n\n\n\n//# sourceURL=webpack://plugin/./src/index.ts?");
 
 /***/ })
 
