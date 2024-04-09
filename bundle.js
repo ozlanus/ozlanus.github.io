@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\nwindow.UIBuilder = {\n    uiBuilderAddComponent: (builderState) => {\n        const model = Neara.getModel();\n        const panelName = builderState.getPanelName();\n        console.log(\"panelName\", panelName);\n    },\n};\nNeara.setPermittedPluginFunctions([\n    'TestPlugin.uiBuilderAddComponent',\n]);\n\n\n\n//# sourceURL=webpack://plugin/./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\nwindow.UIBuilder = {\n    addComponent: (builderState) => {\n        const model = Neara.getModel();\n        const panelName = builderState.getPanelName();\n        console.log(\"panelName\", panelName);\n    },\n};\nNeara.setPermittedPluginFunctions([\n    'UIBuilder.addComponent',\n]);\n\n\n\n//# sourceURL=webpack://plugin/./src/index.ts?");
 
 /***/ })
 
